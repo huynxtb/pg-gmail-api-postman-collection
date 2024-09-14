@@ -1,0 +1,173 @@
+--616b90c1-e3c5-4126-b9bf-dcdaf8c514b3
+Content-Type: application/octet-stream
+Content-Disposition: form-data; name="file"; filename="c73f452b_Gmail API.postman_collection.json"
+
+{
+	"info": {
+		"_postman_id": "fd4dcaa2-a751-45f2-b47c-d84eef8a5788",
+		"name": "Gmail API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17282638"
+	},
+	"item": [
+		{
+			"name": "Get Access Token with Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://accounts.google.com/o/oauth2/token?client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET&refresh_token=YOUR_REFRESH_TOKEN&grant_type=refresh_token",
+					"protocol": "https",
+					"host": [
+						"accounts",
+						"google",
+						"com"
+					],
+					"path": [
+						"o",
+						"oauth2",
+						"token"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "YOUR_CLIENT_ID"
+						},
+						{
+							"key": "client_secret",
+							"value": "YOUR_CLIENT_SECRET"
+						},
+						{
+							"key": "refresh_token",
+							"value": "YOUR_REFRESH_TOKEN"
+						},
+						{
+							"key": "grant_type",
+							"value": "refresh_token"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List Mail",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer YOUR_ACCESS_TOKEN",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://www.googleapis.com/gmail/v1/users/me/messages/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"gmail",
+						"v1",
+						"users",
+						"me",
+						"messages",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Mail",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer YOUR_ACCESS_TOKEN",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://www.googleapis.com/gmail/v1/users/me/messages/188673c729b3e14e",
+					"protocol": "https",
+					"host": [
+						"www",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"gmail",
+						"v1",
+						"users",
+						"me",
+						"messages",
+						"188673c729b3e14e"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Mail",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer YOUR_ACCESS_TOKEN",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n   \"raw\": \"TUlNRS1WZXJzaW9uOiAxLjAKQ29udGVudC10eXBlOiB0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgKQ29udGVudC1UcmFuc2Zlci1FbmNvZGluZzogYmFzZTY0CkZyb206IFByb0cgQ29kZXIgPGRldnN0YXIub3JnQGdtYWlsLmNvbT4KVG86IFByb0cgQ29kZXIgVGVzdCA8cHJvZ2NvZGVyLmNvbUBnbWFpbC5jb20-ClN1YmplY3Q6ID0_VVRGLTg_Qj9WR1Z6ZENCVFpXNWtJRTFoYVd3Pz0KClBIQStWR2hwY3lCcGN5QjBaWE4wSUcxaGFXd3VJRk5sYm1RZ1lua2dVSEp2UnlCRGIyUmxjand2Y0Q0PQ\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.googleapis.com/gmail/v1/users/me/messages/send",
+					"protocol": "https",
+					"host": [
+						"www",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"gmail",
+						"v1",
+						"users",
+						"me",
+						"messages",
+						"send"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
+--616b90c1-e3c5-4126-b9bf-dcdaf8c514b3--
